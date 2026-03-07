@@ -13,6 +13,7 @@ Part of [Ethereum History](https://ethereumhistory.com/proofs).
 | [First Executable Contract](https://ethereumhistory.com/contract/0x6516298e1c94769432ef6d5f450579094e8c21fa) | Aug 7, 2015 (block 48,643) | soljson v0.1.1 | Exact bytecode match | [Repo](https://github.com/cartoonitunes/first-executable-contract-verification) |
 | [Greeter (Hello World!)](https://ethereumhistory.com/contract/0xfea8c4afb88575cd89a2d7149ab366e7328b08eb) | Aug 7, 2015 (block 48,681) | soljson v0.1.1 | Exact bytecode match | [Repo](https://github.com/cartoonitunes/greeter-verification) |
 | [EarlyChainLetter10ETH](https://ethereumhistory.com/contract/0xa327075af2a223a1c83a36ada1126afe7430f955) | Aug 8, 2015 (block 49,931) | soljson v0.1.1 | Exact bytecode match | [Repo](https://github.com/cartoonitunes/chainletter-verification) |
+| [FunDistributor](https://ethereumhistory.com/contract/0x125b606c67e8066da65069652b656c19717745fa) | Aug 10, 2015 (block 62,632) | soljson v0.1.1 | Exact bytecode match | [Source](#fundistributor) |
 | [SciFi Token](https://www.ethereumhistory.com/contract/0xd94badbec21695b7a36abcb979efad0108319d18) | Aug 7, 2015 (block 51,291) | Solidity | Exact bytecode match | [Repo](https://github.com/cartoonitunes/scifi-verify) |
 | [MistCoin](https://ethereumhistory.com/contract/0xf4eced2f682ce333f96f2d8966c613ded8fc95dd) | Nov 3, 2015 | Solidity | Exact bytecode match | [Source](https://github.com/crypt0biwan/mistcoin) |
 | [EF Multisig Wallet](https://ethereumhistory.com/contract/0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae) | Nov 6, 2015 | Solidity | Exact bytecode match | [Repo](https://github.com/cartoonitunes/ef-wallet-verify) |
@@ -32,6 +33,7 @@ Part of [Ethereum History](https://ethereumhistory.com/proofs).
 
 - **Vitalik's Currency Token** was compiled from `currency.se` (Serpent), not `currency.sol` (Solidity). The `ethereum/dapp-bin` repo had both implementations side by side. [Vitalik confirmed on Reddit](https://reddit.com/r/ethereum/comments/1rmheom/) with "Nice find!"
 - **First Executable Contract** was compiled with soljson v0.1.1, the earliest available Solidity compiler release, just 8 days after Ethereum mainnet launch.
+- **FunDistributor** uses the `private` keyword for its internal `payout()` function - one of the earliest known uses of function visibility in a deployed contract. The keyword was supported in solc 0.1.1 but is rarely seen in contracts from this era. The original source was on Pastebin (expired); reconstructed entirely from on-chain bytecode.
 
 ## Why This Matters
 
@@ -41,6 +43,72 @@ Most contracts from 2015-2016 are unverified on Etherscan because:
 - Source code was never published or was lost
 
 These proofs preserve the technical history of Ethereum's earliest smart contracts.
+
+## FunDistributor
+
+**Contract:** [`0x125b606c67e8066da65069652b656c19717745fa`](https://etherscan.io/address/0x125b606c67e8066da65069652b656c19717745fa)
+**Deployed:** August 10, 2015 (block 62,632)
+**Compiler:** soljson v0.1.1+commit.6ff4cd6 (optimizer disabled)
+**SHA256:** `29fef67c6a7d76329a7d3e7770a9b08ae7705553ad628b4347123be0e2fed3c5`
+**Reddit:** [r/ethereum announcement](https://www.reddit.com/r/ethereum/comments/3gfxus/contract_for_exploring_behavioral_economics_and/)
+
+An early "king of the hill" behavioral economics experiment. Send >1% of the contract's balance via `touch()` to become the receiver. If nobody touches the contract for 200+ blocks, the current receiver gets 1/3 of the balance. The interval grows by 0.5% after each payout round.
+
+Original source was hosted on [Pastebin](http://pastebin.com/0DKLWiuc) (expired). Reconstructed from on-chain bytecode.
+
+<details>
+<summary>Verified source code</summary>
+
+```solidity
+contract FunDistributor {
+    address receiver;
+    uint lastBlock;
+    uint touchInterval;
+
+    function FunDistributor() {
+        lastBlock = block.number;
+        touchInterval = 200;
+        receiver = msg.sender;
+    }
+
+    function touch() {
+        payout();
+        if (msg.value * 100 > this.balance) {
+            receiver = msg.sender;
+            lastBlock = block.number;
+        } else {
+            msg.sender.send(msg.value);
+        }
+    }
+
+    function get_receiver() constant returns (address) {
+        return receiver;
+    }
+
+    function get_target_block() constant returns (uint) {
+        return lastBlock + touchInterval + 1;
+    }
+
+    function get_touch_interval() constant returns (uint) {
+        return touchInterval;
+    }
+
+    function payout() private {
+        if (block.number > lastBlock + touchInterval) {
+            receiver.send(this.balance / 3);
+            touchInterval = touchInterval + touchInterval / 200;
+            lastBlock = block.number;
+        }
+    }
+}
+```
+
+</details>
+
+**Verification notes:**
+- The Reddit post claimed payout was 25% of the balance, but verified code shows `this.balance / 3` (33.3%)
+- Uses the `private` keyword for `payout()`, which was supported in solc 0.1.1 but rarely seen in deployed contracts from this era
+- solc 0.1.1 evaluates binary expressions right-to-left: `msg.value * 100` and `100 * msg.value` produce different bytecode (operand push order matters for matching)
 
 ## Contributing
 
