@@ -13,9 +13,9 @@ Part of [Ethereum History](https://ethereumhistory.com/proofs).
 | [First Executable Contract](https://ethereumhistory.com/contract/0x6516298e1c94769432ef6d5f450579094e8c21fa) | Aug 7, 2015 (block 48,643) | soljson v0.1.1 | Exact bytecode match | [Repo](https://github.com/cartoonitunes/first-executable-contract-verification) |
 | [Vitalik's Currency Token](https://ethereumhistory.com/contract/0xa2e3680acaf5d2298697bdc016cf75a929385463) | Nov 12, 2015 (block 530,996) | Serpent @ f0b4128 | Exact bytecode match | [Repo](https://github.com/cartoonitunes/vitalik-currency-verification) |
 | [MistCoin](https://ethereumhistory.com/contract/0xf4eced2f682ce333f96f2d8966c613ded8fc95dd) | Nov 3, 2015 | Solidity | Exact bytecode match | [Source](https://github.com/crypt0biwan/mistcoin) |
-| [EF Multisig Wallet](https://ethereumhistory.com/contract/0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae) | Nov 6, 2015 | Solidity | Exact bytecode match | Etherscan |
-| [GavCoin](https://ethereumhistory.com/contract/0xb4abc1bfc403a7b82c777420c81269858a4b8aa4) | Apr 26, 2016 | Solidity | Exact bytecode match | Etherscan |
-| [SciFi Token](https://ethereumhistory.com/contract/0xd94badbe21fa4590b723bdb7121bffe1564ff91a) | Apr 1, 2016 | Solidity | Exact bytecode match | Etherscan |
+| [EF Multisig Wallet](https://ethereumhistory.com/contract/0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae) | Nov 6, 2015 | Solidity | Exact bytecode match | [Repo](https://github.com/cartoonitunes/ef-wallet-verify) |
+| [GavCoin](https://ethereumhistory.com/contract/0xb4abc1bfc403a7b82c777420c81269858a4b8aa4) | Apr 26, 2016 | Solidity | Exact bytecode match | [Repo](https://github.com/cartoonitunes/gavcoin-verify) |
+| [SciFi Token](https://ethereumhistory.com/contract/0xd94badbe21fa4590b723bdb7121bffe1564ff91a) | Apr 1, 2016 | Solidity | Exact bytecode match | [Repo](https://github.com/cartoonitunes/scifi-verify) |
 | [MeatConversionCalculator](https://ethereumhistory.com/contract/0x4ab274fc3a81b300a0016b3805d9b94c81fa54d2) | Apr 1, 2016 | Solidity | Author-published source | [Gist](https://gist.github.com/alexvandesande/3abc9f741471e08a6356) |
 | [Grinder Association](https://ethereumhistory.com/contract/0xc7e9ddd5358e08417b1c88ed6f1a73149beeaa32) | Apr 1, 2016 | Solidity | Author-published source | [Gist](https://gist.github.com/alexvandesande/3abc9f741471e08a6356) |
 
