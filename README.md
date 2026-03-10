@@ -27,6 +27,7 @@ Part of [Ethereum History](https://ethereumhistory.com/proofs).
 | [MeatConversionCalculator](https://ethereumhistory.com/contract/0x4ab274fc3a81b300a0016b3805d9b94c81fa54d2) | Mar 24, 2016 (block 1,211,128) | Solidity (author-published) | Author-published source | [Gist](https://gist.github.com/alexvandesande/3abc9f741471e08a6356) |
 | [Grinder Association](https://ethereumhistory.com/contract/0xc7e9ddd5358e08417b1c88ed6f1a73149beeaa32) | Mar 24, 2016 (block 1,211,176) | Solidity (author-published) | Author-published source | [Gist](https://gist.github.com/alexvandesande/3abc9f741471e08a6356) |
 | [GavCoin](https://ethereumhistory.com/contract/0xb4abc1bfc403a7b82c777420c81269858a4b8aa4) | Apr 26, 2016 (block 1,408,600) | solc v0.3.1 | Exact bytecode match | [Repo](https://github.com/cartoonitunes/gavcoin-verify) |
+| [Curio Cards v2 (Cards 17-19)](https://ethereumhistory.com/contract/0x8ccf904e75bc592df3db236cd171d0caf0b2bbcb) | Jun 20, 2017 (block 3,902,090) | solc v0.4.8 (optimizer OFF) | Exact bytecode match | [Repo](https://github.com/cartoonitunes/curio-cards-verify) |
 
 ## How It Works
 
