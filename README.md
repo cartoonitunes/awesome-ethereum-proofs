@@ -36,6 +36,7 @@ Part of [Ethereum History](https://ethereumhistory.com/proofs).
 | [Grinder Association](https://ethereumhistory.com/contract/0xc7e9ddd5358e08417b1c88ed6f1a73149beeaa32) | Mar 24, 2016 (block 1,211,176) | Solidity (author-published) | Author-published source | [Gist](https://gist.github.com/alexvandesande/3abc9f741471e08a6356) |
 | [GavCoin](https://ethereumhistory.com/contract/0xb4abc1bfc403a7b82c777420c81269858a4b8aa4) | Apr 26, 2016 (block 1,408,600) | solc v0.3.1 | Exact bytecode match | [Repo](https://github.com/cartoonitunes/gavcoin-verify) |
 | [Mining Coin](https://ethereumhistory.com/contract/0xA5192CD81bD050B7eeBa24B9DE3C5dd983968A27) | Jun 16, 2016 (block 1,718,272) | soljson v0.3.3 (emscripten) | Exact bytecode match | [Repo](https://github.com/cartoonitunes/mining-coin-verification) |
+| [HugCoin](https://ethereumhistory.com/contract/0xb83cab8babc0b9298df5d5283c30bf0d89d23b1e) | Aug 23, 2016 (block 2,123,297) | soljson v0.3.5 (optimizer ON) | Exact bytecode match | [Repo](https://github.com/cartoonitunes/hugcoin-verification) |
 | [Curio Cards v2 (Cards 17-19)](https://ethereumhistory.com/contract/0x8ccf904e75bc592df3db236cd171d0caf0b2bbcb) | Jun 20, 2017 (block 3,902,090) | solc v0.4.8 (optimizer OFF) | Exact bytecode match | [Repo](https://github.com/cartoonitunes/curio-cards-verify) |
 
 ## How It Works
