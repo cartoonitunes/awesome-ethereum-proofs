@@ -23,6 +23,8 @@ docker run --rm ghcr.io/cartoonitunes/solc:0.2.0 sh -c \
 
 The output runtime bytecode matches `target_runtime.txt` byte-for-byte.
 
+Creation/init bytecode is very close but not yet exact, likely due constructor init sequence differences.
+
 ## Notes
 
 - Minimal ERC-20 token with name, symbol, decimals, balanceOf, and transfer
