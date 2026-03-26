@@ -7,6 +7,7 @@ contract DinastyCoinToken {
     event Transfer(address indexed from, address indexed to, uint256 value);
 
     function DinastyCoinToken(uint256 initialSupply, string tokenName, uint8 decimalUnits, string tokenSymbol) {
+        if (initialSupply == 0) initialSupply = 1000000;
         balanceOf[msg.sender] = initialSupply;
         name = tokenName;
         symbol = tokenSymbol;
