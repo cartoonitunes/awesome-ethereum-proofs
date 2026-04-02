@@ -1,0 +1,16 @@
+# Reverse-engineered Serpent source for 0xedf619865c8303e591ad2c4b373aae82997b337a
+# Deployed: 2015-08-11 (block 68,436)
+# Type: Callcode proxy to 0xd658a4b8247c14868f3c512fa5cbb6e458e4a989
+#
+# Closest match: Serpent with ~gas() produces 47-byte runtime (original is 45 bytes)
+# Differences vs original:
+#   1. Serpent emits PUSH1 0x0 where original uses DUP1 (saves 1 byte)
+#   2. Serpent emits POP after CALLCODE, original doesn't (saves 1 byte)
+# Conclusion: original was likely hand-written EVM assembly or hand-tuned Serpent output
+#
+# Tested: 14 Serpent commits (2014-2015) + 42 Solidity builds (0.0.8-0.3.6)
+# None produce exact match.
+
+~calldatacopy(0, 0, ~calldatasize())
+~callcode(~gas() - 9050, 0xd658a4b8247c14868f3c512fa5cbb6e458e4a989, callvalue(), 0, ~calldatasize(), 0, 32)
+~return(0, 32)
