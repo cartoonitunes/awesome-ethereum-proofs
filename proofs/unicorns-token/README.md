@@ -1,57 +1,90 @@
-# Unicorns Token (MyToken) - Source Reconstruction
+# Unicorns Token (MyToken) — Full Source Recovery
 
-Three ERC-20 token contracts deployed by avsa (Alex Van de Sande, `0xD1220A0cf47c7B9Be7A2E6BA89F429762e7b9aDb`) on February 11, 2016. All use the name "Unicorns" with symbol "unicorn emoji" (U+1F984), deployed as test tokens during early Ethereum development.
+Eight ERC-20 token contracts deployed by Alex Van de Sande (avsa, ENS: `alex.vandesande.eth`, `0xD1220A0cf47c7B9Be7A2E6BA89F429762e7b9aDb`) on February 11, 2016 as part of the official [Ethereum Token Tutorial](https://github.com/ethereum/ethereum.org). All use the name "Unicorns" with symbol 🦄 (U+1F984).
 
-## Instances
+Source code fully recovered by bytecode analysis and verified on Etherscan and Sourcify. All 8 contracts are now verified.
 
-| Instance | Address | Block | ETH Balance | centralMinter |
-|----------|---------|-------|-------------|---------------|
-| A (= C) | [`0x1f75047233517dcf67970d9e3c3bb385cb647f30`](https://ethereumhistory.com/contract/0x1f75047233517dcf67970d9e3c3bb385cb647f30) | 987982 | 0.01 ETH | `0x0` (deployer) |
-| B | [`0x41a7820c86f4bea29e6c9239aeb0fbdba12dd790`](https://ethereumhistory.com/contract/0x41a7820c86f4bea29e6c9239aeb0fbdba12dd790) | 988807 | 0.001 ETH | `0xfb6916...` |
-| C | [`0x59a273f78e4d22fcde1a254251941a49295c6786`](https://ethereumhistory.com/contract/0x59a273f78e4d22fcde1a254251941a49295c6786) | 987979 | 0 | `0x0` (deployer) |
+## Contracts
 
-Instances A and C have identical runtime bytecode. Instance B has different runtime (different internal code layout) but the same source.
+Three distinct source variants produce two runtime sizes:
+
+### Variant 1802c — `MyToken_1802c.sol` (1802 bytes)
+
+Functions declared **before** state variables in MyToken body; `transferOwnership` in MyToken; fallback throws.
+
+| Address | Block | centralMinter |
+|---------|-------|---------------|
+| [`0xe36905580fa8cc3006c14bafab9d0ecf39c9c124`](https://etherscan.io/address/0xe36905580fa8cc3006c14bafab9d0ecf39c9c124) | 988921 | `0x0` (deployer) |
+| [`0xab15f08da9b99cbd2f71922953af9a38942d05ec`](https://etherscan.io/address/0xab15f08da9b99cbd2f71922953af9a38942d05ec) | 988935 | `0xfb6916...` |
+
+### Variant 1830a — `MyToken_1830a.sol` (1830 bytes)
+
+`transfer`/`mintToken`/`freezeAccount`/`transferOwnership` declared **before** state vars; `transferFrom`/`approve`/fallback **after**; fallback forwards ETH to owner (no throw).
+
+| Address | Block | centralMinter |
+|---------|-------|---------------|
+| [`0x1a3970be1fcfc610a588b268e3f4e8fa8add1076`](https://etherscan.io/address/0x1a3970be1fcfc610a588b268e3f4e8fa8add1076) | 987976 | `0x0` (deployer) |
+| [`0x59a273f78e4d22fcde1a254251941a49295c6786`](https://etherscan.io/address/0x59a273f78e4d22fcde1a254251941a49295c6786) | 987979 | `0x0` (deployer) |
+| [`0x1f75047233517dcf67970d9e3c3bb385cb647f30`](https://etherscan.io/address/0x1f75047233517dcf67970d9e3c3bb385cb647f30) | 987982 | `0x0` (deployer) |
+
+### Variant 1830b — `MyToken_1830b.sol` (1830 bytes)
+
+State variables declared **before** all functions in MyToken; `transferOwnership` in `owned` base contract; fallback forwards ETH to owner (no throw).
+
+| Address | Block | centralMinter |
+|---------|-------|---------------|
+| [`0x8cb1f47bf87ba23221053933e10933f92f74105b`](https://etherscan.io/address/0x8cb1f47bf87ba23221053933e10933f92f74105b) | 988798 | `0xfb6916...` |
+| [`0x41a7820c86f4bea29e6c9239aeb0fbdba12dd790`](https://etherscan.io/address/0x41a7820c86f4bea29e6c9239aeb0fbdba12dd790) | 988807 | `0xfb6916...` |
+| [`0x6bbfe039121bc99e907303c533b81f7048e840e6`](https://etherscan.io/address/0x6bbfe039121bc99e907303c533b81f7048e840e6) | 988814 | `0xfb6916...` |
+
+(`0xfb6916...` = `0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359`, the Ethereum Foundation multisig)
 
 ## Verification
 
 | Field | Value |
 |-------|-------|
-| Compiler | Solidity v0.1.1 (native C++, webthree-umbrella, commit 6ff4cd6) |
-| Optimizer | ON |
-| Method | Source reconstructed - identical code block multiset confirmed |
-| Runtime (A, C) | 1830 bytes |
-| Runtime (B) | 1830 bytes |
-| Runtime SHA-256 (A, C) | `ba3c503d9ddb1ea29fef5275e2d533cdcca5543733c2abef2ff29228c28ea997` |
-| Runtime SHA-256 (B) | `fd5d86122628fd21110428702162ffb14c64adbad8c6143325b2419d2b8a8462` |
-| Proved by | [@neo](https://ethereumhistory.com/historian/neo-historian) |
+| Compiler | Solidity `v0.2.0-nightly.2016.1.13+commit.d2f18c73` |
+| Optimizer | ON (`--optimize`, 200 runs) |
+| Method | Perfect bytecode match (exact runtime match) |
+| Verification | Etherscan + Sourcify |
 
-## Source Reconstruction Notes
+### Bytecode Hashes
 
-The source (`MyToken.sol`) was reconstructed by analyzing the on-chain bytecode. Key findings:
+| Variant | Runtime Size | SHA-256 |
+|---------|-------------|---------|
+| 1802c | 1802 bytes | `4fec9e5f6c0ba65aa6a0283a39ee25c2becbf9ffb1ca17fe898c9058f2ef6f95` |
+| 1830a | 1830 bytes | `ba3c503d9ddb1ea29fef5275e2d533cdcca5543733c2abef2ff29228c28ea997` |
+| 1830b | 1830 bytes | `fd5d86122628fd21110428702162ffb14c64adbad8c6143325b2419d2b8a8462` |
 
-- **ERC-20 base**: Standard transfer, approve, transferFrom, totalSupply, balanceOf, allowance, decimals, name, symbol
-- **Extended**: mintToken, freezeAccount, transferOwnership
-- **Storage layout**: `owner` (slot 0), `name` (slot 1), `symbol` (slot 2), `decimals` (slot 3), `totalSupply` (slot 4), `balanceOf` (slot 5), `frozenAccount` (slot 6), `allowance` (slot 7), `spentAllowance` (slot 8)
-- **Overflow checks**: Both `transfer()` and `transferFrom()` include `if (balanceOf[_to] + _value < balanceOf[_to]) throw;`
-- **mintToken**: Emits a single Transfer event: `Transfer(owner, target, mintedAmount)` (not two events)
-- **approve()**: Returns `bool success` but no explicit `return true` - returns implicitly
-- **transferFrom()**: Emits `Transfer(msg.sender, _to, _value)` (sender, not _from) - known early template quirk
-- **Gas formula**: String getter uses `15 * numWords + 3` call gas (v0.1.1 C++ pattern)
-- **String storage**: Old Solidity v0.1.1 string packing format (pre-v0.1.3 change)
+## Source Recovery Methodology
 
-The code blocks of the compiled source match the on-chain bytecode exactly (same block multiset after normalizing jump destinations). The layout difference between instances A/C and B suggests they were compiled from the same source with the same compiler, with the optimizer producing slightly different code ordering for each compilation run.
+All three variants share identical Solidity logic. The three different compiled outputs arise from differences in **declaration order** within the source, which determines C++ pointer order in Solidity 0.2.0's `appendFunctionsWithoutCode()` — and therefore the order of code blocks in the compiled output.
 
-## Source
+Key insight: The position of the **string copy helper** (used by `name()` and `symbol()` getters) relative to function bodies reveals whether functions were declared before or after state variables:
 
-See `MyToken.sol` in this directory.
+- **1802c**: All explicit functions in MyToken body declared before state vars → string helper appears late (after all function bodies)
+- **1830a**: Four functions before state vars, three after → string helper appears mid-bytecode
+- **1830b**: State vars before all functions; `transferOwnership` in `owned` base → string helper appears early
+
+The `BlockDeduplicator` keeps the **first** occurrence of duplicate blocks, so the string copy loop (shared between `name()` and `symbol()`) anchors to the first function that uses it — which differs by variant.
+
+Compiled and verified using a rebuilt `solc` binary at exact commit `d2f18c73` of the [webthree-umbrella](https://github.com/ethereum/webthree-umbrella) repository, running inside the `solc-umbrella` Docker container.
+
+## Proved by
+
+[@neo](https://ethereumhistory.com/historian/neo-historian) — [EthereumHistory](https://ethereumhistory.com)
+
+Source repository: [cartoonitunes/avsa-mytoken-verification](https://github.com/cartoonitunes/avsa-mytoken-verification)
 
 ## Verify
 
 ```bash
-# Compile with native v0.1.1 (requires docker)
-cat MyToken.sol | docker run --rm -i ghcr.io/cartoonitunes/solc:0.1.1 \
-  /bin/sh -c "cat > /tmp/t.sol && /umbrella/build/solidity/solc/solc --optimize --bin-runtime /tmp/t.sol"
+# Compile with solc v0.2.0-nightly.2016.1.13+commit.d2f18c73
+# (requires solc-umbrella Docker container with the correct binary)
+docker run --rm -v $(pwd):/work solc-umbrella bash -c \
+  '/work/solc-d2f18c73 --optimize --bin-runtime /work/MyToken_1802c.sol'
 
-# The block structure matches target_runtime_A.hex and target_runtime_B.hex
-# (exact jump destinations may differ depending on optimizer run)
+# Compare output to target_runtime_1802c.hex (strip 0x prefix)
+# Repeat for MyToken_1830a.sol -> target_runtime_1830a.hex
+# Repeat for MyToken_1830b.sol -> target_runtime_1830b.hex
 ```
