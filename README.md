@@ -96,6 +96,7 @@ Part of [Ethereum History](https://ethereumhistory.com/proofs).
 | [Unicorns Token (0x1f75 / 0x59a2)](https://ethereumhistory.com/contract/0x1f75047233517dcf67970d9e3c3bb385cb647f30) | Feb 11, 2016 (block 987,979) | solc v0.1.1 native C++ (optimizer ON) | Source reconstructed - exact block multiset match | [Proof](proofs/unicorns-token/) |
 | [Unicorns Token (0x41a7)](https://ethereumhistory.com/contract/0x41a7820c86f4bea29e6c9239aeb0fbdba12dd790) | Feb 11, 2016 (block 988,807) | solc v0.1.1 native C++ (optimizer ON) | Source reconstructed - exact block multiset match | [Proof](proofs/unicorns-token/) |
 | [Unicorns Token (0xe369 / 0xab15)](https://ethereumhistory.com/contract/0xe36905580fa8cc3006c14bafab9d0ecf39c9c124) | Feb 11, 2016 (block 988,921) | solc ~v0.1.2 (Mist snapshot, optimizer ON) | Source reconstructed | [Proof](proofs/unicorns-avsa-1802b/) |
+| [Bitnation Holon DAO](https://ethereumhistory.com/contract/0x5aaeb6053f3e94c9b9a09f33669435e7ef1beaed) | Feb 17, 2016 (block 1,019,844) | soljson v0.2.2 (optimizer ON) | Exact bytecode match | [cartoonitunes/holon-dao-verification](https://github.com/cartoonitunes/holon-dao-verification) |
 | [BitnationShares (XBN)](https://ethereumhistory.com/contract/0xedb37809291efbc00cca24b630c3f18c2a98f144) | Feb 17, 2016 (block 1,019,907) | soljson v0.2.2 (optimizer ON) | Exact bytecode match | [cartoonitunes/bitnation-shares-verification](https://github.com/cartoonitunes/bitnation-shares-verification) |
 | [PiggyBank](https://ethereumhistory.com/contract/0xd01d0bdaa0bdf2358ecfa278fe54eee8952f09fd) | Feb 19, 2016 (block 1,026,739) | soljson v0.1.1 (optimizer OFF) | Exact bytecode match | [Proof](proofs/piggybank-0xd01d0bda/) |
 | [Doubler (0xc182)](https://ethereumhistory.com/contract/0xc1824278b767d9efb304c63128b1a92babc3fa4b) | Feb 19, 2016 (block 1,028,387) | soljson v0.2.1 (optimizer ON) | Exact bytecode match | [Repo](https://github.com/cartoonitunes/doubler-0xc182-verification) |
@@ -238,4 +239,5 @@ Found source code for an early contract? Know the compiler version for an unveri
 ## Tools
 
 - **[Native C++ Solidity Compilers](https://github.com/cartoonitunes/solc-native-builds)** — Pre-built solc binaries for frontier-era bytecode archaeology. Required when soljson/npm builds produce close-but-not-exact matches.
+
 
