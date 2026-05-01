@@ -1,3 +1,4 @@
+// Submitted by EthereumHistory (ethereumhistory.com)
 contract tokenRecipient {
     function sendApproval(address _to, uint256 _value, address _token);
 }
