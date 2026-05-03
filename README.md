@@ -138,6 +138,7 @@ Part of [Ethereum History](https://ethereumhistory.com/proofs).
 | [CryptoCats Pre-Launch Test (T2)](https://ethereumhistory.com/contract/0x78eea094e1d30141ccade64f8d29a7bfcc921f9e) | Nov 11, 2017 (block 4,532,036) | Solidity 0.4.18 (optimizer OFF) | Near-exact bytecode match (8137/8451, 96.3%) | [Repo](https://github.com/cartoonitunes/cryptocats-t2-verification) |
 | [CKBirthBot](https://ethereumhistory.com/contract/0x00000000a8f806c754549943b6550a2594c9a126) | Nov 28, 2018 (block 6,720,524) | solc v0.4.17 (optimizer OFF) | Exact bytecode match | [Repo](https://github.com/cartoonitunes/ckbirthbot-verification) |
 | [Exchange UserWallet (709k fleet)](https://ethereumhistory.com/contract/0x24eb8813f35fa3f594d8060cd05ecb2c3ba068a7) | Jan 4, 2018 (block 4,850,028) | solc v0.4.14–0.4.16 (optimizer ON, runs=200) | Code match — 627 runtime bytes (709,039 siblings, most-deployed bytecode in Ethereum history) | [Repo](https://github.com/cartoonitunes/userwallet-709k-verification) |
+| [avsa ERC777 ReferenceToken](https://ethereumhistory.com/contract/0x04f3e35cba2bd70d2c37455c410e39826e7c8039) | Apr 5, 2018 (block 5,385,661) | solc v0.4.21 (optimizer ON, runs=200) | Near-exact match (1 byte) | [Repo](https://github.com/cartoonitunes/avsa-erc777-verification) |
 
 ## How It Works
 
