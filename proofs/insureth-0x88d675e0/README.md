@@ -4,7 +4,8 @@
 |-------|-------|
 | Address | `0x88d675e08b053404209e6b0461a1b648592cfbaa` |
 | Deployed | September 20, 2015 (block 262936) |
-| Deployer | `0x0462838f4e30223d51310c9725c51217481141c2` (Francesco Canessa, makevoid) |
+| Deployer | `0x0462838f4e30223d51310c9725c51217481141c2` (Francesco Canessa) |
+| Team | Francesco Canessa, Kristina Butkute, Thomas Bertani (Oraclize founder) |
 | Deploy tx | `0x0361e347f16fbbf5763cf67aeaa8a655062dd56eb1dba29ccc68a0173a4c8976` |
 | Compiler | soljson v0.1.1+commit.6ff4cd6 |
 | Optimizer | ON |
@@ -16,8 +17,9 @@
 
 ## Contract
 
-InsurETH is the winning entry of the Programmable Assets challenge at the Hack the Block
-hackathon in London (September 2015), written by Francesco Canessa (makevoid). It implements
+InsurETH is the winning entry of the Programmable Assets challenge at the Hack The Block
+hackathon held during London FinTech Week in September 2015, built by Francesco Canessa,
+Kristina Butkute, and Thomas Bertani (founder of the Oraclize oracle service). It implements
 a peer-to-peer flight-delay insurance market on Ethereum, using Oraclize for arrival-time
 data feeds. Users pay a premium via `register()` and receive a five-to-one payout if their
 flight is delayed; investors fund the payout pool via `invest()` and withdraw proportional
@@ -26,12 +28,12 @@ a two-day registration cutoff before scheduled arrival, and reserves five times 
 premium against the investor pool to guarantee solvency. Oraclize callbacks are routed
 through a sender check in the fallback function.
 
-The deployed source differs from the public GitHub repository (`makevoid/insurETH_trains`)
-by one function reordering: the on-chain bytecode emits the `deinvest()` body before
-`register()`, while the GitHub source declares `register()` first. The GitHub repo received
-a `layout from insureth air` commit four days post-deploy that rearranged the functions,
-which is why the published source did not compile to the on-chain bytecode without
-correction.
+The deployed source differs from the public GitHub repository (`bertani/insurETH`) by one
+function reordering: the on-chain bytecode emits the `deinvest()` body before `register()`,
+while the GitHub source declares `register()` first. The repo received a
+`layout from insureth air` commit by Kristina Butkute four days post-deploy that rearranged
+the functions, which is why the published source did not compile to the on-chain bytecode
+without correction.
 
 ## Verification
 
