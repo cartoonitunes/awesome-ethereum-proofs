@@ -33,7 +33,6 @@ contract blockcdn {
         symbol = _tokenSymbol;                               // Set the symbol for display purposes
         decimals = _decimalUnits;                            // Amount of decimals for display purposes
         closeTime = _closeTime;                              // Set fund closing time
-		startTime = _startTime;                              // Set fund start time
 		totalSupply = _totalSupply;                          // Total supply
 		minFundedValue = _minValue;                          // Set minimum funding goal
 		maxFundedValue = _maxValue;                          // Set max funding goal

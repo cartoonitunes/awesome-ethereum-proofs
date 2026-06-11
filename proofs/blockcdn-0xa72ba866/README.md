@@ -7,7 +7,14 @@
 - **Runtime size:** 2,595 bytes
 - **Runtime SHA-256:** `a7ca7ac0d173cf1e32fc4448dcc1407978ead632c2978c97494e742518536018`
 - **Balance (June 2026):** 0 ETH
-- **Crack status: CRACKED.** Compiled source produces a byte-for-byte runtime match with the on-chain code.
+- **Crack status: CRACKED (full match).** Compiled source matches both the on-chain **runtime** (2,595 bytes) and the on-chain **creation** bytecode (the 3,105-byte init+runtime, followed by 416 bytes of ABI-encoded constructor args, reproduces the 3,521-byte deployment input exactly).
+- **Verified on:** Sourcify (full match, runtime + creation) and Etherscan.
+
+## Constructor
+
+`blockcdn(address _owner, string _tokenName, uint8 _decimalUnits, string _tokenSymbol, uint256 _totalSupply, uint256 _closeTime, uint256 _startTime, uint256 _minValue, uint256 _maxValue)`. Deployed args: owner `0x8ad39e9e…eea0c`, name/symbol `BCDN`, decimals 15, totalSupply 1e24, closeTime 1478318400, startTime 1477972800, minValue 1.5e23, maxValue 4e23.
+
+Note: the constructor accepts `_startTime` as a parameter but does **not** store it (`startTime` is only set later via `modifyStartTime`). Storing it would add one `SSTORE` to the init code and break the creation match; omitting it is what makes the creation bytecode byte-exact.
 
 ## Identification
 
