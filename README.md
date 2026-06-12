@@ -173,6 +173,7 @@ Part of [Ethereum History](https://ethereumhistory.com/proofs).
 | [CryptHall Of Fame (HeroToken)](https://ethereumhistory.com/contract/0x04cef5553cfea50288d325ddfa305f1b133bd45e) | Feb 8, 2018 (block 5,055,305) | solc v0.4.18 (optimizer OFF) | Exact bytecode match (CelebrityToken fork w/ 4-string Hero struct, owner-renameable updateHero, 150/94 single-step pricing) | [Proof](proofs/crypthall-of-fame/) |
 | [avsa ERC777 ReferenceToken](https://ethereumhistory.com/contract/0x04f3e35cba2bd70d2c37455c410e39826e7c8039) | Apr 5, 2018 (block 5,385,661) | solc v0.4.21 (optimizer ON, runs=200) | Near-exact match (1 byte) | [Repo](https://github.com/cartoonitunes/avsa-erc777-verification) |
 | [ExoPlanets](https://ethereumhistory.com/contract/0xB41FeA87Ef7cf3275c55A6F92d0C95C0F8F6198F) | Jun 28, 2018 (block 5,870,490) | soljson v0.4.18+commit.9cf6e910 (optimizer OFF) | Source reconstructed — 99.86% non-metadata match (25/17,694 bytes differ in string-copy helper code motion + alloc helper epilogue) | [Proof](proofs/exoplanets/) |
+| [Timelock (Ethereum Alarm Clock) x26](https://ethereumhistory.com/contract/0x0a5763e438C8f4156Ea4347014852df39a77b3A1) | Apr 7, 2016 (block 1,291,565) | soljson v0.1.3 (optimizer ON) | Exact runtime bytecode match (26 siblings) | [Proof](proofs/timelock-0x0a5763e4/) |
 
 ## How It Works
 
