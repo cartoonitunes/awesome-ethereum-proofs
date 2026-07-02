@@ -1,0 +1,79 @@
+# Verified by EthereumHistory (ethereumhistory.com)
+#
+# Vitalik Buterin's first deployed contract: a provably-fair betting game
+# 0x034dF87052894BbE35CBd4546fD1d3Bdf7200E2F  (block 263291, 2015-09-20)
+# Serpent (ethereum/serpent @ f0b4128). Runtime + creation bytecode EXACT match.
+
+event Bet(sender:address, value:uint256, odds:uint256)
+event NewSeed()
+
+data owner
+data curseed
+data deadline
+data bets[2^100](sender, guess, payout, odds)
+data numbets
+data reserved
+
+def init():
+    self.owner = msg.sender
+
+def get_curseed():
+    return(self.curseed)
+
+def set_curseed(a:bytes32, b:bytes32):
+    if msg.sender != self.owner:
+        return(0)
+    if a != sha3(self.curseed) and self.curseed != 0:
+        return(0)
+    i = 0
+    n = self.numbets
+    seed = 115792089237316195423570985008687907853269984665640564039457584007913129639
+    while i < n:
+        rand = div(sha3([a, self.bets[i].guess]:arr), seed)
+        if rand < self.bets[i].odds:
+            send(self.bets[i].sender, self.bets[i].payout)
+        self.bets[i].sender = 0
+        i += 1
+    self.numbets = 0
+    self.curseed = b
+    self.deadline = block.timestamp + 172800
+    log(type=NewSeed)
+    return(1)
+
+def emergency_withdraw():
+    if block.timestamp <= self.deadline:
+        return(0)
+    i = 0
+    n = self.numbets
+    while i < n:
+        send(self.bets[i].sender, self.bets[i].payout * self.bets[i].odds / 1000)
+        self.bets[i].sender = 0
+        i += 1
+    suicide(0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae)
+
+def bet(guess:bytes32, odds):
+    if self.numbets >= 100:
+        send(msg.sender, msg.value)
+        return(-1)
+    payout = msg.value * 1000 / odds
+    if self.balance - self.reserved < payout:
+        send(msg.sender, msg.value)
+        return(-2)
+    self.reserved += payout
+    id = self.numbets
+    self.bets[id].sender = msg.sender
+    self.bets[id].guess = guess
+    self.bets[id].payout = payout
+    self.bets[id].odds = odds
+    self.numbets = id + 1
+    log(type=Bet, msg.sender, msg.value, odds)
+    return(id)
+
+def withdraw():
+    send(self.owner, self.balance - self.reserved)
+
+def get_num_bets():
+    return(self.numbets)
+
+def get_bet(id):
+    return([self.bets[id].sender, self.bets[id].payout, self.bets[id].odds]:arr)
