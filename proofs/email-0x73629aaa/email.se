@@ -1,0 +1,7 @@
+# Verified by EthereumHistory (ethereumhistory.com)
+event Email(a:string, b:string, c:string)
+
+def email(a:string, b:string, c:string):
+    if msg.value >= 7000000000000000:
+        log(type=Email, a, b, c)
+        send(self.storage[0], self.balance)
