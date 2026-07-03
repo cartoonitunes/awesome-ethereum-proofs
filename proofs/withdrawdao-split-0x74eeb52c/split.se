@@ -1,0 +1,6 @@
+# Verified by EthereumHistory (ethereumhistory.com)
+def split(addr1:address, addr2:address):
+    if balance(0xbf4ed7b27f1d666546e30d74d50d173d20bca754) > 1000000000000000000000000:
+        call(0, addr1, balance(self), 0, 0, 0, 0)
+    else:
+        call(0, addr2, balance(self), 0, 0, 0, 0)
