@@ -1,0 +1,9 @@
+# Submitted by EthereumHistory (ethereumhistory.com)
+event GetRequest(url:string, sender:address, id:uint256, value:uint256)
+
+def get(url:string):
+    if msg.value >= 7000000000000000:
+        self.storage[0] = sha3(block.prevhash + sha3(url:str) + msg.sender + msg.value * 2^160)
+        log(type=GetRequest, url, msg.sender, self.storage[0], msg.value)
+        return(self.storage[0])
+        send(0xb3cd4c2512402047ef4ddeb1ab9f8df400ce2d3f, self.balance)

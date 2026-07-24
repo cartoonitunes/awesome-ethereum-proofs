@@ -1,0 +1,13 @@
+# Submitted by EthereumHistory (ethereumhistory.com)
+event LogResponse(response:string, fetchId:uint256)
+data cbids[]
+
+extern main: [get:[string]:int256]
+
+def callback(response:str, responseId:uint256):
+    if self.cbids[responseId]:
+        log(type=LogResponse, response, self.cbids[responseId])
+
+def call(fetcher:address, url:str, fetchId:uint256):
+    x = fetcher.get(url)
+    self.cbids[x] = fetchId
