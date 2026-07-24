@@ -36,4 +36,5 @@ check get_0x36517.se    0x36517ccf7a16266de8b7cbd60db1f45a23f1eaf1
 check get_0xd53096.se   0xd53096b3cf64d4739bb774e0f055653e7f2cd710
 check oracle_0xc861.se  0xc861fc8dc9537159d94acbd662439046ea407166
 check oracle_0xf938.se  0xf938cbc60975a79101408fca21082f1e263300cd
-echo "All five: exact byte-for-byte match."
+check oracle_0x4fea5cb2.se 0x4fea5cb278edfabcc24f7c1425951a0d2faa609b
+echo "All six: exact byte-for-byte match."

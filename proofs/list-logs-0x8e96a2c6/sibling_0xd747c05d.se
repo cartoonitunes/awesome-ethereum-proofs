@@ -1,0 +1,15 @@
+# Submitted by EthereumHistory (ethereumhistory.com)
+event Log(value:str)
+data break
+
+def init():
+    self.break = block.number
+
+def addLog(v:str):
+    log(type=Log, v)
+
+def addBreak():
+    self.break = block.number
+
+def const getLatestBreak():
+    return(self.break)
