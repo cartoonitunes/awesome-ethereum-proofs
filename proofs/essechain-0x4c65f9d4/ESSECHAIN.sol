@@ -65,9 +65,9 @@ contract ESSECHAIN is ERC20 {
     string public constant symbol = "ESSE";
     uint public constant decimals = 8;
     
-uint256 public totalSupply = 30000000000e18;
+uint256 public totalSupply = 3000000000e8;
     
-uint256 public totalDistributed = 15000000000e18;
+uint256 public totalDistributed = 1600000000e8;
     
 uint256 public totalRemaining = totalSupply.sub(totalDistributed);
     
