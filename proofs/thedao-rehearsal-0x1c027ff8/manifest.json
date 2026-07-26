@@ -1,0 +1,22 @@
+{
+ "name": "TheDAO (rehearsal deployment)",
+ "targets": [
+  {
+   "address": "0x1c027FF8998698C8722D725DE2303f8ed75BC753",
+   "name": "\u2014",
+   "deployed": "2016-04-29T19:59:00+00:00",
+   "block": 1427320,
+   "source": "DAO.sol",
+   "contract": "DAO",
+   "soljson": "soljson-v0.3.1-nightly.2016.4.12+commit.3ad5e821.js",
+   "optimize": true,
+   "runtimeFile": "runtime_0x1c027ff8.txt",
+   "creationFile": "creation_0x1c027ff8.txt",
+   "ctorArgBytes": 192,
+   "claimCreation": false,
+   "runtimeBytes": 10837,
+   "runtimeSha256": "357fc574584e94f3359b545aea92a4e3d53f406400bc7c99f47e42bfd5baa2bc",
+   "creationSha256": "f74674a0fb1b2f29aff52c69acc318e2284044e43da4d05510d185b893b4dd61"
+  }
+ ]
+}

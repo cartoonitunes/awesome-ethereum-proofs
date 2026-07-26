@@ -1,0 +1,39 @@
+{
+ "name": "Pluton",
+ "targets": [
+  {
+   "address": "0x3C087f2684706B78a1c558e26E2735A4F8dDBb2A",
+   "name": "Pluton",
+   "deployed": "2016-06-20T22:50:04+00:00",
+   "block": 1741183,
+   "source": "Pluton_20jun.sol",
+   "contract": "HumanStandardToken",
+   "soljson": "soljson-v0.3.2+commit.81ae2a78.js",
+   "optimize": true,
+   "runtimeFile": "runtime_0x3c087f26.txt",
+   "creationFile": "creation_0x3c087f26.txt",
+   "ctorArgBytes": 0,
+   "claimCreation": false,
+   "runtimeBytes": 1821,
+   "runtimeSha256": "66e2eaeab2df1b21503cbd8ce9deef3e616c9e4aca275f08340bccd1694952e6",
+   "creationSha256": "f4f1c06b0b66f10926e90ec4379170f7648faae8c2b71c88145c930686054426"
+  },
+  {
+   "address": "0xb94f85Ea35987648BB460A96A34f56Ac1A6cc6F7",
+   "name": "Pluton",
+   "deployed": "2016-06-26T23:58:28+00:00",
+   "block": 1777698,
+   "source": "Pluton_26jun.sol",
+   "contract": "HumanStandardToken",
+   "soljson": "soljson-v0.3.2+commit.81ae2a78.js",
+   "optimize": true,
+   "runtimeFile": "runtime_0xb94f85ea.txt",
+   "creationFile": "creation_0xb94f85ea.txt",
+   "ctorArgBytes": 256,
+   "claimCreation": true,
+   "runtimeBytes": 1799,
+   "runtimeSha256": "292684e92833cbb631d7d0885e0de5d86739184bf8d33640a893388b8b1edd68",
+   "creationSha256": "99aeaadb9b776dd459ac0a76c31001ecd8fb21d02d917835926613671888416d"
+  }
+ ]
+}
