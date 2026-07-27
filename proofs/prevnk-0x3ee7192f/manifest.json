@@ -1,0 +1,73 @@
+{
+ "name": "PreVNK",
+ "targets": [
+  {
+   "address": "0x3Ee7192F069F3Ab16077f843F2F469bD327e206C",
+   "name": "PreVNK",
+   "deployed": "2016-01-31T20:22:11+00:00",
+   "block": 933869,
+   "source": "PreVNK.sol",
+   "contract": "PreVNK",
+   "soljson": "soljson-v0.2.0+commit.4dc2445e.js",
+   "optimize": true,
+   "runtimeFile": "runtime_0x3ee7192f.txt",
+   "creationFile": "creation_0x3ee7192f.txt",
+   "ctorArgBytes": 256,
+   "claimCreation": true,
+   "runtimeBytes": 1311,
+   "runtimeSha256": "20c15c5c01b4810c4bd5ecc5ec141473b7cc9c6c2df1e758a4360bf200dc5bc5",
+   "creationSha256": "756c0cfd529ec7b1672bcdb2826b7b0ecb5e51aaeeb81eda9785a512778a775d"
+  },
+  {
+   "address": "0x610f1d4D442fA91f3a9A9797AcfA78F7a587f701",
+   "name": "TestIssue",
+   "deployed": "2016-01-31T20:09:42+00:00",
+   "block": 933833,
+   "source": "PreVNK.sol",
+   "contract": "PreVNK",
+   "soljson": "soljson-v0.2.0+commit.4dc2445e.js",
+   "optimize": true,
+   "runtimeFile": "runtime_0x610f1d4d.txt",
+   "creationFile": "creation_0x610f1d4d.txt",
+   "ctorArgBytes": 256,
+   "claimCreation": true,
+   "runtimeBytes": 1311,
+   "runtimeSha256": "20c15c5c01b4810c4bd5ecc5ec141473b7cc9c6c2df1e758a4360bf200dc5bc5",
+   "creationSha256": "232f3bf81e92e9576a4d6c61082aa31e7ee209248275c2b144d02bf15a5764b3"
+  },
+  {
+   "address": "0x2B5B9de0652886f471f347163431Bf70d5450333",
+   "name": "testVUNK",
+   "deployed": "2016-01-31T18:46:22+00:00",
+   "block": 933537,
+   "source": "PreVNK_draft.sol",
+   "contract": "PreVNK",
+   "soljson": "soljson-v0.2.0+commit.4dc2445e.js",
+   "optimize": true,
+   "runtimeFile": "runtime_0x2b5b9de0.txt",
+   "creationFile": "creation_0x2b5b9de0.txt",
+   "ctorArgBytes": 256,
+   "claimCreation": true,
+   "runtimeBytes": 1308,
+   "runtimeSha256": "73954e1b12ff9ae55157ec2950a90d54ea5883f8c34430a61d11329344e33564",
+   "creationSha256": "dbd9d1ec991a99fa755bf4026ba42553aa5fc8d6b05cfe874a75ee6bcf337c2d"
+  },
+  {
+   "address": "0xBda249e6f813b2e8fd24F36354d2a9f9529149F1",
+   "name": "TesterToken",
+   "deployed": "2016-01-31T19:45:04+00:00",
+   "block": 933757,
+   "source": "PreVNK_draft.sol",
+   "contract": "PreVNK",
+   "soljson": "soljson-v0.2.0+commit.4dc2445e.js",
+   "optimize": true,
+   "runtimeFile": "runtime_0xbda249e6.txt",
+   "creationFile": "creation_0xbda249e6.txt",
+   "ctorArgBytes": 256,
+   "claimCreation": true,
+   "runtimeBytes": 1308,
+   "runtimeSha256": "73954e1b12ff9ae55157ec2950a90d54ea5883f8c34430a61d11329344e33564",
+   "creationSha256": "73904f2d4a11ddfcc42dd363b521890d18159d874a20722142a21ac97470ecc8"
+  }
+ ]
+}
