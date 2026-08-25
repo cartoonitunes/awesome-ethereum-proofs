@@ -1,5 +1,5 @@
 <!-- Verified by EthereumHistory (https://ethereumhistory.com) -->
-# CatCoin 🐱 (Dec 2015) — Bytecode Proof
+# CatCoin 🐱 (Dec 2015): Bytecode Proof
 
 Exact bytecode match for **the first Ethereum token with an emoji ticker**.
 
@@ -43,15 +43,15 @@ one you get depends on emscripten heap state:
 | Compiler state | Layout |
 |---|---|
 | First compile in a fresh module | A |
-| After ≥1 prior compile in the same module | B ← **this is what is onchain** |
+| After 1 or more prior compiles in the same module | B (this is what is onchain) |
 
-The deployed contract is layout B — what browser-solidity produces, since it
+The deployed contract is layout B, which is what browser-solidity produces, since it
 recompiles on every keystroke and its module is always warm. `verify.js`
 reproduces that state, then compiles until it matches byte for byte.
 
 Because single-shot verifiers always produce layout A, **neither Etherscan nor
 Sourcify can verify this contract**. Sourcify does accept solc 0.1.x and
-compiles the source successfully — it simply recompiles into layout A and
+compiles the source successfully, but it recompiles into layout A and
 returns `no_match`. Etherscan returns "Compiled contract deployment bytecode
 does NOT match".
 
@@ -65,6 +65,6 @@ tokenSymbol   : "🐱"
 centralMinter : 0x18EBd42Dc5E42EDaC84e8DEd1dc824Af20008564
 ```
 
-`centralMinter` is not a wallet — it is an ethereum.org Association DAO deployed
+`centralMinter` is not a wallet. It is an ethereum.org Association DAO deployed
 the same afternoon, governed by the `catenaDAO` (`ß`) shares token. It moved the
 supply for the first time ever on 2026-08-24 via `newProposal`/`vote`/`executeProposal`.
