@@ -1,6 +1,6 @@
 # OraclizeAddrResolver (Oraclize, v1)
 
-Oraclize's first address resolver. Client contracts were meant to call `getAddress()` to find the current Oraclize connector, but `getAddress()` returns its own named return variable `oaddr` without assigning it, so it always returns 0x0. The stored connector is only reachable through the public getter `addr()`. Onchain today `addr()` returns `0xbbbdca2d2973601d973bc0452252178fb992978f` and `getAddress()` returns zero. A corrected resolver was deployed 37 minutes later at [`0x3ae1631c`](../oraclizeaddrresolver-3ae163/).
+Oraclize's second address resolver, deployed 47 seconds after the first one at `0xed51ae5e42bba55d8316b5c38a8f14c149a32adc` (which had a hardcoded owner and connector and the same bug). Client contracts were meant to call `getAddress()` to find the current Oraclize connector, but `getAddress()` returns its own named return variable `oaddr` without assigning it, so it always returns 0x0. The stored connector is only reachable through the public getter `addr()`. Onchain today `addr()` returns `0xbbbdca2d2973601d973bc0452252178fb992978f` and `getAddress()` returns zero. A corrected resolver was deployed 37 minutes later at [`0x3ae1631c`](../oraclizeaddrresolver-3ae163/).
 
 | Field | Value |
 |-------|-------|
