@@ -1,0 +1,40 @@
+// Submitted by EthereumHistory (ethereumhistory.com)
+contract VerifySignature {
+    address owner;
+
+    function VerifySignature() {
+        owner = msg.sender;
+    }
+
+    function test() {
+        bytes1 a = bytes1(parseAddr("036421f6eca2ef7a43ce0af4a150b933afb3cf0764323b8ff9ebfd4935fd86d436"));
+        bytes1 b = bytes1(parseAddr("20"));
+        bytes1 c = bytes1(parseAddr("0b7effb7704f726bc64139753dc2d0a3929af2309dd2930ad7a722f5b214cf6e"));
+        bytes1 d = bytes1(parseAddr("73a461ce418e9e483f13a98c0cba5cddf07f647ea1d6ba2e88d494dfcd411c9c"));
+        bytes1 e = bytes1(parseAddr("58e2f335bbd6f2b0da93eae19342e7309654fbfeed9a214a1e5d835ac09cc226"));
+        log0(c);
+    }
+
+    function parseAddr(string _a) returns (address) {
+        bytes memory tmp = bytes(_a);
+        uint160 iaddr = 0;
+        uint160 b1;
+        uint160 b2;
+        for (uint i=2; i<2+2*20; i+=2){
+            iaddr *= 256;
+            b1 = uint160(tmp[i]);
+            b2 = uint160(tmp[i+1]);
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
+            iaddr += (b1*16+b2);
+        }
+        return address(iaddr);
+    }
+
+    function kill() {
+        if (msg.sender == owner) suicide(msg.sender);
+    }
+
+}
