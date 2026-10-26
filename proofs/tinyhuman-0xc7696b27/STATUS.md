@@ -14,7 +14,7 @@ Etherscan matches on **runtime**, so the constructor (8 contributor names/shares
 reconstruction-free — it never reaches the runtime.
 
 ## Current best: `TinyHuman.sol` (this dir)
-- Compiles under 0.1.3 opt-OFF to **5,826 bytes** vs target **5,673** → **+153 bytes (over)**.
+- Compiles under 0.1.3 opt-OFF to **5,794 bytes** vs target **5,673** → **+121 bytes (over)**.
 - First **374 bytes byte-identical** (dispatcher head); divergence after is only shifted
   jump destinations caused by the size delta.
 - Build/diff: `node compile_ih.js /tmp/soljson/soljson-v0.1.3+commit.028f561d.js TinyHuman.sol 0`
@@ -35,7 +35,7 @@ reconstruction-free — it never reaches the runtime.
 - **Fix that worked:** the original uses **unchecked bare `.send()`** (no `if(!send) throw`)
   in the refund and payout paths. Removing those checks recovered 40 bytes (193→153).
 
-## What's left (the 153 bytes)
+## What's left (the 121 bytes)
 Localized by per-function body-size comparison (split at dispatcher JUMPDESTs):
 - **`transferRightIfApproved`: FIXED** — target returns **void** (entry ends `JUMPDEST STOP`); my `returns (bool)` added a 20-byte encode+RETURN epilogue. Changing it to a no-return function recovered 32 bytes (153→121) and extended the identical prefix 209→374.
 - **~121 bytes in the shared helper/constant-getter region.** All individual function bodies now match in size; the first *real* (non-jump-pointer) divergence is at 0x642, where my three inlined constant-getter stubs (PUSH3 0f4240 / PUSH1 3c / PUSH2 1194) sit against differently-ordered target code. Remaining work is matching 0.1.3 code-section layout / helper ordering in this tail — deep codegen archaeology.
