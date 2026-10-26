@@ -1,4 +1,4 @@
-# Tiny Human reconstruction — STATUS (97.9%, 121 bytes from exact)
+# Tiny Human reconstruction — STATUS (98.1%, 107 bytes from exact)
 
 **Address:** `0xc7696b27830dd8aa4823a1cba8440c27c36adec4`
 **Deployer:** `0x421291621428555e77f5ad58f217c9efa84d901f` (BlockApps)
@@ -14,7 +14,7 @@ Etherscan matches on **runtime**, so the constructor (8 contributor names/shares
 reconstruction-free — it never reaches the runtime.
 
 ## Current best: `TinyHuman.sol` (this dir)
-- Compiles under 0.1.3 opt-OFF to **5,794 bytes** vs target **5,673** → **+121 bytes (over)**.
+- Compiles under 0.1.3 opt-OFF to **5,780 bytes** vs target **5,673** → **+107 bytes (over)**.
 - First **374 bytes byte-identical** (dispatcher head); divergence after is only shifted
   jump destinations caused by the size delta.
 - Build/diff: `node compile_ih.js /tmp/soljson/soljson-v0.1.3+commit.028f561d.js TinyHuman.sol 0`
@@ -70,3 +70,15 @@ Note: scattering is a POSITION diff, not a SIZE diff. The +121-byte SIZE excess 
 separate, still-unlocated issue (all named function bodies size-match; getter entries match).
 Two problems remain for byte-exact: (a) locate ~121 bytes of extra code; (b) reproduce the
 exact declaration interleaving. This is opcode-level archaeology; convergence not guaranteed.
+
+## Update: indexed event params (121 -> 107)
+Target emits **LOG2** (opcode a2) for both events; mine emitted LOG1 (a1). => the address
+param of each event is **indexed**:
+  event purchasedRight(address indexed buyer, bytes32 collectionId);
+  event transferredRight(address indexed to, bytes32 collectionId);
+(indexed does not change the topic-0 signature hash, so recovered sigs still hold.)
+Recovered 14 bytes (121 -> 107). Four validated fixes total: unchecked .send(),
+void transferRightIfApproved, indexed events, (storage layout). Remaining +107 is
+DISTRIBUTED micro-differences in the shared tail helper codegen (ABI encoders / struct
+accessors), not one isolable block; token-alignment can't cleanly separate it due to many
+near-identical getter blocks. Needs per-helper opcode matching.

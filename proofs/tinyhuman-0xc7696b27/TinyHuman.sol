@@ -29,8 +29,8 @@ contract TinyHuman {
     Transfer[] public transferLog;
     uint public transferCount;
 
-    event purchasedRight(address buyer, bytes32 collectionId);
-    event transferredRight(address to, bytes32 collectionId);
+    event purchasedRight(address indexed buyer, bytes32 collectionId);
+    event transferredRight(address indexed to, bytes32 collectionId);
 
     function TinyHuman(address board1, address board2, address board3) {
         admin = msg.sender;
