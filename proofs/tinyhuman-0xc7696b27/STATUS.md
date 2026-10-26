@@ -1,4 +1,4 @@
-# Tiny Human reconstruction — STATUS (98.9%, 62 bytes from exact)
+# Tiny Human reconstruction — STATUS (99.3%, 39 bytes from exact)
 
 **Address:** `0xc7696b27830dd8aa4823a1cba8440c27c36adec4`
 **Deployer:** `0x421291621428555e77f5ad58f217c9efa84d901f` (BlockApps)
@@ -14,7 +14,7 @@ Etherscan matches on **runtime**, so the constructor (8 contributor names/shares
 reconstruction-free — it never reaches the runtime.
 
 ## Current best: `TinyHuman.sol` (this dir)
-- Compiles under 0.1.3 opt-OFF to **5,735 bytes** vs target **5,673** → **+62 bytes (over)**.
+- Compiles under 0.1.3 opt-OFF to **5,712 bytes** vs target **5,673** → **+39 bytes (over)**.
 - First **374 bytes byte-identical** (dispatcher head); divergence after is only shifted
   jump destinations caused by the size delta.
 - Build/diff: `node compile_ih.js /tmp/soljson/soljson-v0.1.3+commit.028f561d.js TinyHuman.sol 0`
@@ -91,3 +91,17 @@ return-false in each setter. Rewriting all setters to positive-guard form
 `if (admin == msg.sender) { ...; return true; }` (implicit false on fall-through) let solc
 share one return-0 epilogue -> saved 45 bytes (107 -> 62). Fifth validated fix.
 Same inline-return-false pattern remains in changeAdminFromBoard and purchase (next).
+
+## Update: combined positive guard for changeAdminFromBoard (62 -> 39)
+Rewrote the three sequential `if(approvals[BOARD_n] != newAdmin) return false;` as one
+combined positive guard `if(a==x && b==x && c==x){ admin=x; return true; }` -> shared
+return-0 epilogue, -23 bytes. Sixth fix. Total 193 -> 39 (99.3%).
+
+## Remaining +39: constant-stub emission ORDER (compiler-internal)
+First real (non-pointer) divergence is at 0x642: mine emits the three constant-returner
+stubs GROUPED (JUMPDEST PUSH <const> DUP2 JUMP x3) right after setPrice's RETURN; the
+TARGET scatters them at 0xa93 / 0xce7 / 0xf50, interleaved among function impl bodies.
+This is solc 0.1.3 emitting accessor stubs in source DECLARATION order. Matching it needs
+the original's exact interleaving of the 3 `uint public constant` decls among the other
+members. Moving them as a block (top vs end) does not scatter them; individual interleaving
+is required and the exact positions are not recoverable without the original source.

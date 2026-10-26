@@ -91,11 +91,10 @@ contract TinyHuman {
         if (msg.sender == BOARD_1) approvals[msg.sender] = newAdmin;
         else if (msg.sender == BOARD_2) approvals[msg.sender] = newAdmin;
         else if (msg.sender == BOARD_3) approvals[msg.sender] = newAdmin;
-        if (approvals[BOARD_1] != newAdmin) return false;
-        if (approvals[BOARD_2] != newAdmin) return false;
-        if (approvals[BOARD_3] != newAdmin) return false;
-        admin = newAdmin;
-        return true;
+        if (approvals[BOARD_1] == newAdmin && approvals[BOARD_2] == newAdmin && approvals[BOARD_3] == newAdmin) {
+            admin = newAdmin;
+            return true;
+        }
     }
 
     function purchase(bytes32 collectionId) returns (bool) {
