@@ -56,3 +56,17 @@ source, recompile; then the shared tail. Decompile-guided guessing is exhausted.
 
 **Do not submit to Etherscan until the compiled runtime is byte-identical to `runtime.hex`.**
 First line of the submitted source must be `// Submitted by EthereumHistory (ethereumhistory.com)`.
+
+## Tail analysis (next iteration starts here)
+The constant-getter *entries* are byte-identical (0x1d3/0x3cf/0x564). Divergence is the
+jump target to each one's constant-returning stub:
+- MINE: 3 stubs grouped at ~0x641-0x64d (declared constants together).
+- TARGET: scattered at 0x0a93, 0x0ce7, 0x0f50 — interleaved among other function bodies.
+=> In the ORIGINAL, the 3 constants were declared *interspersed* among the state
+   vars/functions; solc emits accessor bodies in declaration order. Grouping them (as in
+   current source) mislays them. Moving them as a block (top vs end) does NOT help — they
+   must be spread to the exact original positions.
+Note: scattering is a POSITION diff, not a SIZE diff. The +121-byte SIZE excess is a
+separate, still-unlocated issue (all named function bodies size-match; getter entries match).
+Two problems remain for byte-exact: (a) locate ~121 bytes of extra code; (b) reproduce the
+exact declaration interleaving. This is opcode-level archaeology; convergence not guaranteed.
