@@ -50,36 +50,41 @@ contract TinyHuman {
     }
 
     function setBlockappsAddr(address a) returns (bool) {
-        if (admin != msg.sender) return false;
-        BLOCKAPPS = a;
-        return true;
+        if (admin == msg.sender) {
+            BLOCKAPPS = a;
+            return true;
+        }
     }
 
     function setNewAdmin(address a) returns (bool) {
-        if (admin != msg.sender) return false;
-        admin = a;
-        return true;
+        if (admin == msg.sender) {
+            admin = a;
+            return true;
+        }
     }
 
     function setNewOracle(address a) returns (bool) {
-        if (admin != msg.sender) return false;
-        oracle = a;
-        return true;
+        if (admin == msg.sender) {
+            oracle = a;
+            return true;
+        }
     }
 
     function setPrice(uint price) returns (bool) {
-        if (oracle != msg.sender) return false;
-        usdEthPrice = price;
-        downloadPriceInWei = USDDOWNLOADPRICE * 1000000000000000000 / usdEthPrice;
-        stemPriceInWei = USDSTEMPRICE * 1000000000000000000 / usdEthPrice;
-        priceLastUpdated = block.timestamp;
-        return true;
+        if (oracle == msg.sender) {
+            usdEthPrice = price;
+            downloadPriceInWei = USDDOWNLOADPRICE * 1000000000000000000 / usdEthPrice;
+            stemPriceInWei = USDSTEMPRICE * 1000000000000000000 / usdEthPrice;
+            priceLastUpdated = block.timestamp;
+            return true;
+        }
     }
 
     function setAddr(uint id, address a) returns (bool) {
-        if (admin != msg.sender) return false;
-        owners[id].addr = a;
-        return true;
+        if (admin == msg.sender) {
+            owners[id].addr = a;
+            return true;
+        }
     }
 
     function changeAdminFromBoard(address newAdmin) returns (bool) {
