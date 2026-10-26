@@ -116,13 +116,12 @@ contract TinyHuman {
         return true;
     }
 
-    function transferRightIfApproved(address to, bytes32 collectionId) returns (bool) {
+    function transferRightIfApproved(address to, bytes32 collectionId) {
         if (msg.sender == BLOCKAPPS) {
             transferLog.length = transferCount + 1;
             transferLog[transferCount] = Transfer(to, collectionId, block.number);
             transferCount++;
             transferredRight(to, collectionId);
-            return true;
         }
     }
 }

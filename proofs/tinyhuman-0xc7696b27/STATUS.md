@@ -1,4 +1,4 @@
-# Tiny Human reconstruction — STATUS (97.4%, 153 bytes from exact)
+# Tiny Human reconstruction — STATUS (97.9%, 121 bytes from exact)
 
 **Address:** `0xc7696b27830dd8aa4823a1cba8440c27c36adec4`
 **Deployer:** `0x421291621428555e77f5ad58f217c9efa84d901f` (BlockApps)
@@ -15,7 +15,7 @@ reconstruction-free — it never reaches the runtime.
 
 ## Current best: `TinyHuman.sol` (this dir)
 - Compiles under 0.1.3 opt-OFF to **5,826 bytes** vs target **5,673** → **+153 bytes (over)**.
-- First **209 bytes byte-identical** (dispatcher head); divergence after is only shifted
+- First **374 bytes byte-identical** (dispatcher head); divergence after is only shifted
   jump destinations caused by the size delta.
 - Build/diff: `node compile_ih.js /tmp/soljson/soljson-v0.1.3+commit.028f561d.js TinyHuman.sol 0`
   then compare the printed runtime hex to `runtime.hex`.
@@ -37,9 +37,8 @@ reconstruction-free — it never reaches the runtime.
 
 ## What's left (the 153 bytes)
 Localized by per-function body-size comparison (split at dispatcher JUMPDESTs):
-- **`transferRightIfApproved`: +20 bytes** — start here (smaller, likelier to converge).
-- **~133 bytes in the shared compiler-helper tail** (after the last function) — accumulated
-  small codegen differences; the hard part.
+- **`transferRightIfApproved`: FIXED** — target returns **void** (entry ends `JUMPDEST STOP`); my `returns (bool)` added a 20-byte encode+RETURN epilogue. Changing it to a no-return function recovered 32 bytes (153→121) and extended the identical prefix 209→374.
+- **~121 bytes in the shared helper/constant-getter region.** All individual function bodies now match in size; the first *real* (non-jump-pointer) divergence is at 0x642, where my three inlined constant-getter stubs (PUSH3 0f4240 / PUSH1 3c / PUSH2 1194) sit against differently-ordered target code. Remaining work is matching 0.1.3 code-section layout / helper ordering in this tail — deep codegen archaeology.
 
 ## Dead ends (do NOT retry — made it worse)
 The Palkeoramix decompile (`decompile_palkeoramix.txt`, and the fuller EH copy) is
