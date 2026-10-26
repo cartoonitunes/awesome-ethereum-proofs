@@ -73,8 +73,8 @@ contract TinyHuman {
     function setPrice(uint price) returns (bool) {
         if (oracle == msg.sender) {
             usdEthPrice = price;
-            downloadPriceInWei = USDDOWNLOADPRICE * 1000000000000000000 / usdEthPrice;
-            stemPriceInWei = USDSTEMPRICE * 1000000000000000000 / usdEthPrice;
+            downloadPriceInWei = 60 * 1 ether / usdEthPrice;
+            stemPriceInWei = 125 * 10**16 * 3600 / usdEthPrice;
             priceLastUpdated = block.timestamp;
             return true;
         }

@@ -1,4 +1,4 @@
-# Tiny Human reconstruction — STATUS (99.3%, 39 bytes from exact)
+# Tiny Human reconstruction — STATUS (99.4%, 34 bytes from exact)
 
 **Address:** `0xc7696b27830dd8aa4823a1cba8440c27c36adec4`
 **Deployer:** `0x421291621428555e77f5ad58f217c9efa84d901f` (BlockApps)
@@ -14,7 +14,7 @@ Etherscan matches on **runtime**, so the constructor (8 contributor names/shares
 reconstruction-free — it never reaches the runtime.
 
 ## Current best: `TinyHuman.sol` (this dir)
-- Compiles under 0.1.3 opt-OFF to **5,712 bytes** vs target **5,673** → **+39 bytes (over)**.
+- Compiles under 0.1.3 opt-OFF to **5,707 bytes** vs target **5,673** → **+34 bytes (over)**.
 - First **374 bytes byte-identical** (dispatcher head); divergence after is only shifted
   jump destinations caused by the size delta.
 - Build/diff: `node compile_ih.js /tmp/soljson/soljson-v0.1.3+commit.028f561d.js TinyHuman.sol 0`
@@ -105,3 +105,18 @@ This is solc 0.1.3 emitting accessor stubs in source DECLARATION order. Matching
 the original's exact interleaving of the 3 `uint public constant` decls among the other
 members. Moving them as a block (top vs end) does not scatter them; individual interleaving
 is required and the exact positions are not recoverable without the original source.
+
+## Update: price expressions use literals (39 -> 34); function-order is LAYOUT-ONLY
+- CORRECTION: function declaration order does NOT change bytecode length (every ordering
+  compiles to the same size; verified across many permutations). It only permutes byte
+  POSITIONS. An earlier "down to 20 via ordering" reading was a measurement error. Ordering
+  will matter only AFTER the size matches exactly (for final byte alignment).
+- Price math uses LITERAL expressions, not the named constants:
+    downloadPriceInWei = 60 * 1 ether / usdEthPrice;      (literal 60, not USDDOWNLOADPRICE)
+    stemPriceInWei     = 125 * 10**16 * 3600 / usdEthPrice; (exactly the decompile's form)
+  Using the named constant USDDOWNLOADPRICE in the expression adds 2 bytes vs literal 60;
+  the stem form `125*10**16*3600` is 3 bytes smaller than `4500*1e18`. Net 39 -> 34. (7th fix.)
+  The constants USDDOWNLOADPRICE/USDSTEMPRICE/TOTALSHARES remain as public-constant getters.
+- Remaining +34 is DISTRIBUTED across the struct-array public getters (owners/txLog/
+  transferLog) encoders — near-identical blocks that differ in small 0.1.3 codegen ways,
+  not one isolable block. Block-multiset diff: 21 mine-only blocks vs 33 target-only, net +34.
