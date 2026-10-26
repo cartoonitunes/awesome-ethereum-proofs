@@ -120,3 +120,26 @@ is required and the exact positions are not recoverable without the original sou
 - Remaining +34 is DISTRIBUTED across the struct-array public getters (owners/txLog/
   transferLog) encoders — near-identical blocks that differ in small 0.1.3 codegen ways,
   not one isolable block. Block-multiset diff: 21 mine-only blocks vs 33 target-only, net +34.
+
+## Guard/price codegen analysis (brackets 0, can't land) + source hunt exhausted
+Identified the exact remaining mechanisms for the +34:
+- **Guard operand order:** solc 0.1.3 evaluates the RIGHT operand of `==` first. Target
+  loads `admin`/`oracle` first => original source is `msg.sender == admin` /
+  `msg.sender == oracle` (mine was `admin == msg.sender`). This is a CONTENT fix (same size).
+- **Price computation:** target keeps `60 * 1 ether` UNFOLDED in a shared subroutine
+  (runtime MUL); mine folds to a constant. Using the named constant `USDDOWNLOADPRICE`
+  produces the unfolded form but nets +2; the stem form `125*10**16*3600` nets -3.
+- **Internal getter-helper trick** for guards is a huge lever (admin-helper -61, oracle-helper
+  +20, both -7) but the target setters are INLINE (no helper), so that's the wrong structure.
+Tested combinations bracket 0 (-27, -7, +34, +36, +54) but none LANDS on 0. The exact
+original source structure is required and cannot be uniquely inferred from bytecode.
+
+Source hunt (all negative):
+- Deployer 0x421291... made exactly ONE contract (this one) — no sibling.
+- BlockApps GitHub: no 2015 Solidity contracts (earliest ethereum-rlp; rest 2016+ SDK).
+- Wayback: blockapps.net website only (2015-11-27); myceliaformusic.org no snapshot.
+- GitHub code search for unique fn names (transferRightIfApproved, stemPriceInWei, etc.): none.
+
+CONCLUSION: 99.4% reconstruction (34/5673). Byte-exact blocked on solc 0.1.3 internal
+codegen (guard operand order + constant fold/subroutine) that cannot be uniquely reproduced
+without the original source, which is not publicly available. NOT submitted (34 != 0).
