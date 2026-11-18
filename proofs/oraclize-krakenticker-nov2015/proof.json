@@ -1,0 +1,39 @@
+{
+ "compiler": "v0.1.6+commit.d41f8b7c",
+ "optimizer": true,
+ "runs": 200,
+ "contract": "KrakenTicker",
+ "match": "exact runtime, fresh compiler process",
+ "groups": [
+  {
+   "source": "KrakenTicker_0x4183e5e1.sol",
+   "runtime_hex": "0x4183e5e1.runtime.hex",
+   "addresses": [
+    "0x4183e5e1d5ac363720cec6dd0d43307a280c00df",
+    "0x84c9cf2c6b98c81e0cceb41aa79161d16e0c54af",
+    "0xc4948ff84d21de502e5e91c4aebe3b661cb52574"
+   ]
+  },
+  {
+   "source": "KrakenTicker_0x21bfe38e.sol",
+   "runtime_hex": "0x21bfe38e.runtime.hex",
+   "addresses": [
+    "0x21bfe38e5d0514d0c6d0f42faba47a26443d0085"
+   ]
+  },
+  {
+   "source": "KrakenTicker_0x24299714.sol",
+   "runtime_hex": "0x24299714.runtime.hex",
+   "addresses": [
+    "0x24299714c4ddbc20fc98ec21f89c03712033c30f"
+   ]
+  },
+  {
+   "source": "KrakenTicker_0xea5a7408.sol",
+   "runtime_hex": "0xea5a7408.runtime.hex",
+   "addresses": [
+    "0xea5a740826b1ad31113f8213d43a85416229906b"
+   ]
+  }
+ ]
+}
