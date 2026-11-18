@@ -1,0 +1,74 @@
+{
+ "compiler": "v0.1.6+commit.d41f8b7c",
+ "optimizer": true,
+ "runs": 200,
+ "contract": "PriceTicker",
+ "match": "exact runtime, fresh compiler process",
+ "groups": [
+  {
+   "source": "PriceTicker_0x0ad47c46.sol",
+   "runtime_hex": "0x0ad47c46.runtime.hex",
+   "addresses": [
+    "0x0ad47c46f923117d1938465b7fd6c926cae697f2",
+    "0x1537ed20e43f8d8482cf5772ecec7db341b7309f",
+    "0x6c5d1b85fe8464f7e6ffcf8ae2c2faad9181b24b",
+    "0x707a208848d31f48cff83e1a019d3d8cabd13ea1",
+    "0x9eae7c8969e6cf1e0932a29b558648e571b0a6ff",
+    "0xc74e74b55dfbb75a7aaf56b0a80c732d1cde3fdf",
+    "0xd06b7f18db2df982363e083de48946adcd1432e9",
+    "0xdaa034c9c02b883c7f5e1fa7f819d121d67c3d4b",
+    "0xe2e86f7369ebbe7009f278aad1d590372243bc2e",
+    "0xe3ce93f6751e5c9a6c7c608834470ec746383633",
+    "0xfa96ce2aebd6660206e4c3ee12bcfe6e5afa5a5d"
+   ]
+  },
+  {
+   "source": "PriceTicker_0xa03ac9cb.sol",
+   "runtime_hex": "0xa03ac9cb.runtime.hex",
+   "addresses": [
+    "0xa03ac9cb33d9a5858678e85cc179241ba776d980"
+   ]
+  },
+  {
+   "source": "PriceTicker_0x0a3570f5.sol",
+   "runtime_hex": "0x0a3570f5.runtime.hex",
+   "addresses": [
+    "0x0a3570f5eaab2f6fcf1d607f45c9bc3fa774f46d",
+    "0x1fadcc65902dd618d3a34510cbb375bbf5b8fd3b",
+    "0x28cbb29ac0fcff55dcea93c85b43458532e66fc4",
+    "0x377bb56950d87a2832abde9c08e8a6c2eedaa86a",
+    "0x39d6f191ced62329ebe4acb6ed8fcf90bc28d7f6",
+    "0x3eab5cec4f2758bfabf198e90bfb5530f02c5d8c",
+    "0x3f0217c5fc8fd657f9356623af883230f919bc84",
+    "0x40dba4a7b388d9a5c129952c11d2395ac6704c6a",
+    "0x438147d3e195d7b8b22fda2168b07363a389d007",
+    "0x60637e6ed541f457d72c189c701ec3bab9c3ceca",
+    "0x84a9c13107cbcb005da62e812c682dc3eb32a56c",
+    "0xae235bd463412b34f750974ddda19a8288e9629d",
+    "0xdd81e513c52aa3d680d04c83801d33bb98f295ff",
+    "0xe209654739e15de27f7b2395ae00c1156082b482"
+   ]
+  },
+  {
+   "source": "PriceTicker_0xa5e55417.sol",
+   "runtime_hex": "0xa5e55417.runtime.hex",
+   "addresses": [
+    "0xa5e554176b09d21dbcdce6ea060e810c6bb01865"
+   ]
+  },
+  {
+   "source": "PriceTicker_0x1677ef4c.sol",
+   "runtime_hex": "0x1677ef4c.runtime.hex",
+   "addresses": [
+    "0x1677ef4c5cfe9e7f965d2cc01168fe69c6d5e81e"
+   ]
+  },
+  {
+   "source": "PriceTicker_0xb8a289cb.sol",
+   "runtime_hex": "0xb8a289cb.runtime.hex",
+   "addresses": [
+    "0xb8a289cbb69d7d3a725ce9f73124a9ada2a9ebf1"
+   ]
+  }
+ ]
+}
