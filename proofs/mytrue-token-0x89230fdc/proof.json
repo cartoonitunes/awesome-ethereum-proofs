@@ -1,0 +1,25 @@
+{
+  "contract": "MyToken",
+  "address": "0x89230fdc3b73851da77ebec3cc9f340e48ac0df1",
+  "chain": "ethereum-mainnet",
+  "deployer": "0x1d01dae64a1e92c2b09c248be5e185c16ff79093",
+  "deployment_tx": "0xf0622db2086b47019182a0f5f3e8ba81ced1b63066d2b48ae86d07def509a053",
+  "deployed": "2015-12-10T04:10:49Z",
+  "compiler": {
+    "version": "v0.2.0+commit.4dc2445e",
+    "optimizer": false,
+    "notes": "Runtime is byte-identical on every soljson build from v0.1.7-nightly.2015.11.19 through v0.2.0-nightly.2016.1.28 at optimizer OFF. v0.1.6 and v0.1.7 stable differ. v0.2.0 release chosen as the build current at deploy time."
+  },
+  "match": {
+    "runtime": "exact (1864 bytes)",
+    "creation": "exact (1882 bytes, no constructor arguments)"
+  },
+  "recovered": {
+    "MyTrue(uint256,string,string,uint8)": "selector 0x95f18951, recovered by dictionary brute force ('My' + 'True'); a public function, not a constructor, because its name differs from the contract name",
+    "template": "ethereum.org MyToken tutorial (Dec 2015) with transfer() declared above the state variables; that declaration order is required for the function-body layout"
+  },
+  "not_recoverable_from_bytecode": {
+    "contract_name": "Not present in runtime or creation code. 'MyToken' is the tutorial name, chosen because the constructor was evidently renamed from it.",
+    "parameter_and_event_argument_names": "Taken from the tutorial; they do not affect bytecode."
+  }
+}
