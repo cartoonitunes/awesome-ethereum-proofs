@@ -1,0 +1,24 @@
+{
+ "compiler": "v0.1.6+commit.d41f8b7c",
+ "optimizer": false,
+ "runs": 200,
+ "contract": "StopLoss",
+ "match": "exact runtime, fresh compiler process",
+ "groups": [
+  {
+   "source": "StopLoss_0xdb292b3d.sol",
+   "runtime_hex": "0xdb292b3d.runtime.hex",
+   "addresses": [
+    "0xdb292b3df18d09a9aa2c456eb2d9dd24847db73c",
+    "0xf9df17ea2d59073bd128746c58db1e87879d7a9e"
+   ]
+  },
+  {
+   "source": "StopLoss_0xaa2035b8.sol",
+   "runtime_hex": "0xaa2035b8.runtime.hex",
+   "addresses": [
+    "0xaa2035b83c9242e85475b6f792d923833b9f400d"
+   ]
+  }
+ ]
+}
