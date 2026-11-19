@@ -1,0 +1,16 @@
+{
+ "compiler": "v0.1.6+commit.d41f8b7c",
+ "optimizer": true,
+ "runs": 200,
+ "contract": "EtherDice",
+ "match": "exact runtime, fresh compiler process ; creation code also exact",
+ "groups": [
+  {
+   "source": "EtherDice.sol",
+   "runtime_hex": "runtime.hex",
+   "addresses": [
+    "0x2faa316fc4624ec39adc2ef7b5301124cfb68777"
+   ]
+  }
+ ]
+}
