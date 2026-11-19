@@ -1,0 +1,35 @@
+{
+ "compiler": "v0.1.1+commit.6ff4cd6",
+ "optimizer": true,
+ "runs": 200,
+ "contract": "Glofile",
+ "match": "exact runtime and exact creation code, fresh compiler process",
+ "source_repo": "https://github.com/ethernomad/glofile-ethereum",
+ "groups": [
+  {
+   "source": "Glofile.sol",
+   "runtime_hex": "runtime.hex",
+   "addresses": [
+    "0x7e05754ca55673358f424c695a243fd0412ee97a"
+   ],
+   "repo_commit": "7e7bec243e6e50bb85ef2e2c54b680b0a5138bdc"
+  }
+ ],
+ "native_only": [
+  {
+   "source": "Glofile_0424874.sol",
+   "addresses": [
+    "0xfe80cdb9a559ce7f8ed6392e3f4c38113e1e0d4d"
+   ],
+   "repo_commit": "04248740d5b8b6f7883403b5e4bd0b619b41d89d"
+  },
+  {
+   "source": "Glofile_dc79582.sol",
+   "addresses": [
+    "0x01eb011239275178445c870dc34455228b0714f5"
+   ],
+   "repo_commit": "dc7958290464dbd322ef441169d3c7de0bebe130"
+  }
+ ],
+ "native_compiler": "cpp-ethereum monorepo 2d8e135df9b16815ccc9897c7a1f9d8bff0da4ad (2015-08-18), solc --optimize 1; runtime and creation exact for all three addresses. soljson v0.1.1 raises a CSE OptimizerException on the two native_only sources (fixed by 2d8e135 'Detect unavailable items and do not optimise the chunk'), so no published compiler can verify those two on Etherscan."
+}
