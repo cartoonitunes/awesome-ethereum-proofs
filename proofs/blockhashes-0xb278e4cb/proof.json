@@ -1,0 +1,26 @@
+{
+ "language": "serpent",
+ "compiler": "ethereum/serpent f67c1a9 (2015-09-04); also exact with 6faaebb (2015-08-20), a7716d3 and fd9b0b6",
+ "match": "exact runtime and exact creation code",
+ "groups": [
+  {
+   "source": "blockhashes_ac069aa.se",
+   "runtime_hex": "runtime_84cb2fd6.hex",
+   "addresses": [
+    "0x84cb2fd6f7b123acc0762ba4a8e1e3987cba125d"
+   ],
+   "repo": "https://github.com/amiller/ethereum-blockhashes",
+   "repo_commit": "ac069aa (also identical bytecode for ad50a00, f93a8a2)"
+  },
+  {
+   "source": "blockhashes_kobigurk_c4b5f33.se",
+   "runtime_hex": "runtime_b278e4cb.hex",
+   "addresses": [
+    "0xb278e4cb20dfbf97e78f27001f6b15288302f4d7"
+   ],
+   "repo": "https://github.com/kobigurk/ethereum-blockhashes",
+   "repo_commit": "c4b5f338be68749156741cfb847af3e2ff65bab4"
+  }
+ ],
+ "etherscan": "not possible (Etherscan does not support Serpent)"
+}
