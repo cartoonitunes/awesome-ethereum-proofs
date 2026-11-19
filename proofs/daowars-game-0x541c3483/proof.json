@@ -1,0 +1,17 @@
+{
+ "compiler": "v0.1.6+commit.d41f8b7c",
+ "optimizer": true,
+ "runs": 200,
+ "contract": "Game",
+ "match": "exact runtime, fresh compiler process ; creation code also exact",
+ "groups": [
+  {
+   "source": "Game.sol",
+   "runtime_hex": "runtime.hex",
+   "addresses": [
+    "0x541c348304b9fb7baf64f528a2a0d2c897d1d6d9",
+    "0x05c5f9312251a9015e5733b327a25a2e8c2f5195"
+   ]
+  }
+ ]
+}
