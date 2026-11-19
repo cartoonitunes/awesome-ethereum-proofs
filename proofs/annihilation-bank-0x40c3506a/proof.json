@@ -1,0 +1,13 @@
+{
+ "compiler": "v0.1.1+commit.6ff4cd6",
+ "optimizer": false,
+ "runs": 200,
+ "contract": "Bank",
+ "constructor_args": "000000000000000000000000000000000000000000000000000000000000003c",
+ "match": "exact runtime and exact creation code (+ constructor arg 60), fresh compiler process",
+ "selector_recovery": "0fe65b36 = requestAnnihilation(uint256) (dictionary brute force; consistent with semantics: Support recipient is address 0, so a fully matched campaign burns the locked balance); c9e7e29b = supportNeeded(); event 8fc4de83... = Supported(address,uint256); 27e235e3 = balances(address), 6a42b8f8 = delay() (public only in the 0x480d57db variant)",
+ "groups": [
+  {"source": "Bank.sol", "runtime_hex": "runtime.hex", "addresses": ["0x40c3506a8446bb5d806fe0030d451142c8044f77"]},
+  {"source": "BankPublic.sol", "runtime_hex": "runtime_public.hex", "addresses": ["0x480d57dbf6c3b49916b9325e2c5ed92401c54efc"]}
+ ]
+}
