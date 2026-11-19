@@ -3,7 +3,7 @@
 | Field | Value |
 |-------|-------|
 | Addresses | `0x84cb2Fd6f7b123acC0762bA4A8E1E3987cBA125D` (Sep 3, 2015), `0xB278E4cB20dfbf97e78f27001F6B15288302F4d7` (Sep 4, 2015) |
-| Deployer | `0x8266C4A0…` (both) |
+| Deployer | `0x8266c4a0e9301661F19C936B7bd16c0dFA37C6e6` (both) |
 | Language | Serpent |
 | Compiler | ethereum/serpent `f67c1a9` (2015-09-04). Also exact with `6faaebb`, `a7716d3` and `fd9b0b6` |
 | Match | exact runtime and exact creation code, both addresses |
