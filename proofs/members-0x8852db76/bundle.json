@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "address": "0x8852db768551e89ac125f6a92450ef5e847a65e3",
+    "deployer_address": "0xc3c4a610adb3636d905b6d73fd99f6ee5dcd31a6",
+    "deploy_tx_hash": "0x9fc2318f605d948e08f8c72a7f658c72785134347a15512d284e4ddd9ce12454",
+    "deploy_block": 1790164,
+    "deploy_timestamp": "2016-06-29T01:28:52Z",
+    "deploy_date_human": "June 29, 2016",
+    "era": "homestead",
+    "compiler_version": "soljson-v0.3.1+commit.c492d9be",
+    "compiler_confidence": null,
+    "optimizer": "on",
+    "runtime_size": 3087,
+    "creation_size": 3539,
+    "init_prefix_size": 452,
+    "constructor_args_size": 0,
+    "runtime_sha256": "bef2ae0f895028fa357236fa0d3f6869766e027c97b66bf5d8eba23110f20b39",
+    "creation_sha256": "ec797f7a6e0263cd12659d86a0c08b4a22779c8f9a5ec10b6c26b2f74fb2240f",
+    "byte_match_pct": 100.0,
+    "diff_bytes_total": 0,
+    "verdict_status": "exact-match",
+    "attempt_id": "c3d0e0817c98",
+    "contract_name": "Members",
+    "display_name": "Members"
+  },
+  "bundle": {
+    "publish_slug": "members-0x8852db76",
+    "bundle_path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\members-0x8852db76",
+    "files_written": [
+      {
+        "name": "Members.sol",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\members-0x8852db76\\Members.sol",
+        "size_bytes": 2217,
+        "source": "snapshot",
+        "overwrote_existing": false
+      },
+      {
+        "name": "target_runtime.txt",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\members-0x8852db76\\target_runtime.txt",
+        "size_bytes": 6175,
+        "source": "target_runtime",
+        "overwrote_existing": false
+      },
+      {
+        "name": "README.md",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\members-0x8852db76\\README.md",
+        "size_bytes": 1588,
+        "source": "rendered",
+        "overwrote_existing": false
+      },
+      {
+        "name": "target_creation.txt",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\members-0x8852db76\\target_creation.txt",
+        "size_bytes": 7079,
+        "source": "target_creation",
+        "overwrote_existing": false
+      },
+      {
+        "name": "verify.js",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\members-0x8852db76\\verify.js",
+        "size_bytes": 3044,
+        "source": "rendered",
+        "overwrote_existing": false
+      }
+    ]
+  }
+}
