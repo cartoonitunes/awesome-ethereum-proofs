@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "address": "0xa76dda4021a408d47dbdf4c718bfd43ab97114df",
+    "deployer_address": "0x39afc3556daa4d11a0a8f16ec1a490cd84aa6945",
+    "deploy_tx_hash": "0x55005e4be0759af04a24a358abd1db59e385a41287c5c0d62c28f98588305901",
+    "deploy_block": 1013122,
+    "deploy_timestamp": "2016-02-16T14:08:54Z",
+    "deploy_date_human": "February 16, 2016",
+    "era": "frontier",
+    "compiler_version": "soljson-v0.2.1+commit.91a6b35f",
+    "compiler_confidence": null,
+    "optimizer": "off",
+    "runtime_size": 1138,
+    "creation_size": 1226,
+    "init_prefix_size": 88,
+    "constructor_args_size": 0,
+    "runtime_sha256": "a6fef11e4c58ce88e2e468da7b788c908ea9f07d7261b0ed6530a74fcb240c58",
+    "creation_sha256": "0bb29363630e1ede0fc254cb0a27195c60a1d88b81a746693a278f012158a714",
+    "byte_match_pct": 100.0,
+    "diff_bytes_total": 0,
+    "verdict_status": "exact-match",
+    "attempt_id": "7630020481f3",
+    "contract_name": "Invoice",
+    "display_name": "Invoice"
+  },
+  "bundle": {
+    "publish_slug": "invoice-0xa76dda40",
+    "bundle_path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\invoice-0xa76dda40",
+    "files_written": [
+      {
+        "name": "Invoice.sol",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\invoice-0xa76dda40\\Invoice.sol",
+        "size_bytes": 1529,
+        "source": "snapshot",
+        "overwrote_existing": false
+      },
+      {
+        "name": "target_runtime.txt",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\invoice-0xa76dda40\\target_runtime.txt",
+        "size_bytes": 2277,
+        "source": "target_runtime",
+        "overwrote_existing": false
+      },
+      {
+        "name": "README.md",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\invoice-0xa76dda40\\README.md",
+        "size_bytes": 1592,
+        "source": "rendered",
+        "overwrote_existing": false
+      },
+      {
+        "name": "target_creation.txt",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\invoice-0xa76dda40\\target_creation.txt",
+        "size_bytes": 2453,
+        "source": "target_creation",
+        "overwrote_existing": false
+      },
+      {
+        "name": "verify.js",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\invoice-0xa76dda40\\verify.js",
+        "size_bytes": 3045,
+        "source": "rendered",
+        "overwrote_existing": false
+      }
+    ]
+  }
+}
