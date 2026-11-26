@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "address": "0x66c67a9e26f5f1bf04c0e8797a4ae2f01db5785a",
+    "deployer_address": "0x0047a8033cc6d6ca2ed5044674fd421f44884de8",
+    "deploy_tx_hash": "0xa6a49e6751b48530dc2c445297d0c01354fd6b12899e5c6c4465479c4e662b8e",
+    "deploy_block": 422591,
+    "deploy_timestamp": "2015-10-22T14:44:44Z",
+    "deploy_date_human": "October 22, 2015",
+    "era": "frontier",
+    "compiler_version": "soljson-v0.1.6+commit.d41f8b7c",
+    "compiler_confidence": null,
+    "optimizer": "off",
+    "runtime_size": 1726,
+    "creation_size": 2017,
+    "init_prefix_size": 291,
+    "constructor_args_size": 0,
+    "runtime_sha256": "e7f7fdaef29a4192b53e23dbe6af3dbb92db00c5af293e95e7bfe6c02232b50e",
+    "creation_sha256": "1bc2e573bf5eab0a7a259472109138eca7c415631bbfb23ed416bd52645d05e8",
+    "byte_match_pct": 100.0,
+    "diff_bytes_total": 0,
+    "verdict_status": "exact-match",
+    "attempt_id": "8fc81caba547",
+    "contract_name": "ObamaOracle",
+    "display_name": "Obama Oracle"
+  },
+  "bundle": {
+    "publish_slug": "obama-oracle-0x66c67a9e",
+    "bundle_path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\obama-oracle-0x66c67a9e",
+    "files_written": [
+      {
+        "name": "ObamaOracle.sol",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\obama-oracle-0x66c67a9e\\ObamaOracle.sol",
+        "size_bytes": 2046,
+        "source": "snapshot",
+        "overwrote_existing": true
+      },
+      {
+        "name": "target_runtime.txt",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\obama-oracle-0x66c67a9e\\target_runtime.txt",
+        "size_bytes": 3453,
+        "source": "target_runtime",
+        "overwrote_existing": true
+      },
+      {
+        "name": "README.md",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\obama-oracle-0x66c67a9e\\README.md",
+        "size_bytes": 1600,
+        "source": "rendered",
+        "overwrote_existing": true
+      },
+      {
+        "name": "target_creation.txt",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\obama-oracle-0x66c67a9e\\target_creation.txt",
+        "size_bytes": 4035,
+        "source": "target_creation",
+        "overwrote_existing": true
+      },
+      {
+        "name": "verify.js",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\obama-oracle-0x66c67a9e\\verify.js",
+        "size_bytes": 3061,
+        "source": "rendered",
+        "overwrote_existing": true
+      }
+    ]
+  }
+}
