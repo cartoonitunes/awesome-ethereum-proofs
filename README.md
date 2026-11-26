@@ -294,6 +294,7 @@ Part of [Ethereum History](https://ethereumhistory.com/proofs).
 | [PrivateLedger](https://ethereumhistory.com/contract/0xa02ce4399d1b4a445f9ddb17542266bd629f25de) | Aug 11, 2015 (block 68,275) | soljson v0.1.1 (optimizer OFF) | Exact bytecode match (runtime + creation), author source | [Proof](proofs/privateledger-0xa02ce439/) |
 | [Content](https://ethereumhistory.com/contract/0x9a9876377ccf9c10867f9e1ba010eae79b6a4b41) | Nov 29, 2016 (block 2,715,876) | soljson v0.4.4 (optimizer OFF) | Exact bytecode match (runtime + creation), author source | [Proof](proofs/content-0x9a987637/) |
 | [RadioCoin](https://ethereumhistory.com/contract/0xeebafcdc08cc06c0322eb01b811527fdfb08c5ba) | Jan 15, 2016 (block 854,065) | soljson v0.1.7 (optimizer ON) | Exact bytecode match (runtime + creation), reconstructed source | [Proof](proofs/radiocoin-0xeebafcdc/) |
+| [Members (payment-splitting member registry)](https://ethereumhistory.com/contract/0x8852db768551e89ac125f6a92450ef5e847a65e3) | Jun 29, 2016 (block 1,790,164) | soljson v0.3.1+commit.c492d9be (optimizer ON) | Exact bytecode match (runtime + creation) | [Proof](proofs/members-0x8852db76/) |
 
 ## How It Works
 
