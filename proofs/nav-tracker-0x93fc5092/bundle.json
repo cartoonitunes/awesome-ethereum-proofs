@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "address": "0x93fc50922d4ab63300abf7378a5b9196c2a15da1",
+    "deployer_address": "0x8b9346aa412b52954b5138dbb72adab97273766e",
+    "deploy_tx_hash": "0x7bf019a073f97951040d69887bbf442bf044872bc522609a6dfa9fda763893f9",
+    "deploy_block": 1046601,
+    "deploy_timestamp": "2016-02-23T06:07:01Z",
+    "deploy_date_human": "February 23, 2016",
+    "era": "frontier",
+    "compiler_version": "soljson-v0.2.2+commit.ef92f566",
+    "compiler_confidence": null,
+    "optimizer": "on",
+    "runtime_size": 1845,
+    "creation_size": 2337,
+    "init_prefix_size": 364,
+    "constructor_args_size": 128,
+    "runtime_sha256": "7a9cbf87653fd22282a0b6d6403e002c23a2b3a554ea0d63c1f6805c10cb2d91",
+    "creation_sha256": "8611e9b7ab958e489660a7b1a7ad07693b9c501a360e43f5f7551b8b8a68445a",
+    "byte_match_pct": 100.0,
+    "diff_bytes_total": 0,
+    "verdict_status": "exact-match",
+    "attempt_id": "cf241fb3310e",
+    "contract_name": "Nav",
+    "display_name": "NAV Tracker",
+    "match_note": "exact on compile #6 of one soljson session (fresh single compile is 117 bytes off); see verify.js"
+  },
+  "bundle": {
+    "publish_slug": "nav-tracker-0x93fc5092",
+    "bundle_path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\nav-tracker-0x93fc5092",
+    "files_written": [
+      {
+        "name": "Nav.sol",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\nav-tracker-0x93fc5092\\Nav.sol",
+        "size_bytes": 1938,
+        "source": "snapshot",
+        "overwrote_existing": false
+      },
+      {
+        "name": "target_runtime.txt",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\nav-tracker-0x93fc5092\\target_runtime.txt",
+        "size_bytes": 3691,
+        "source": "target_runtime",
+        "overwrote_existing": false
+      },
+      {
+        "name": "README.md",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\nav-tracker-0x93fc5092\\README.md",
+        "size_bytes": 1573,
+        "source": "rendered",
+        "overwrote_existing": false
+      },
+      {
+        "name": "target_creation.txt",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\nav-tracker-0x93fc5092\\target_creation.txt",
+        "size_bytes": 4675,
+        "source": "target_creation",
+        "overwrote_existing": false
+      },
+      {
+        "name": "verify.js",
+        "path": "C:\\Users\\Marcel\\Desktop\\eth-history\\ethereum_museum\\proofs\\nav-tracker-0x93fc5092\\verify.js",
+        "size_bytes": 3029,
+        "source": "rendered",
+        "overwrote_existing": false
+      }
+    ]
+  }
+}
